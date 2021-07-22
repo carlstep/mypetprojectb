@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:card_swiper/card_swiper.dart';
 
 void main() => runApp(MyPetApp());
 
@@ -62,6 +63,30 @@ class MyPetApp extends StatelessWidget {
       ),
     );
 
+    Widget petCardInfoSwipeSection = Container(
+      margin: EdgeInsets.only(top: 30, bottom: 30),
+      height: 350,
+      width: 300,
+      child: Swiper(
+        itemBuilder: (BuildContext context, int index) {
+          return Card(
+            color: Colors.red,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Image.network(
+                "https://via.placeholder.com/350x150",
+                fit: BoxFit.fill,
+              ),
+            ),
+          );
+        },
+        itemCount: 3,
+        scrollDirection: Axis.horizontal,
+        viewportFraction: 0.8,
+        scale: 0.9,
+      ),
+    );
+
     return MaterialApp(
       title: 'My Pet Project',
       home: Scaffold(
@@ -72,6 +97,7 @@ class MyPetApp extends StatelessWidget {
         body: ListView(
           children: [
             petCardSection,
+            petCardInfoSwipeSection,
           ],
         ),
       ),
