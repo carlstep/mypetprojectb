@@ -67,16 +67,19 @@ class MyPetApp extends StatelessWidget {
         height: 350,
         width: 300,
         child: Swiper.children(
+          viewportFraction: 0.8,
+          scale: 0.9,
           autoplay: false,
           pagination: SwiperPagination(
-              margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 30.0),
+              margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 20.0),
               builder: DotSwiperPaginationBuilder(
-                  color: Colors.white30,
-                  activeColor: Colors.white,
-                  size: 20.0,
+                  color: Colors.grey[500],
+                  activeColor: Colors.grey[800],
+                  size: 15.0,
                   activeSize: 20.0)),
           children: <Widget>[
             Card(
+              color: Colors.yellow,
               child: Column(
                 children: [
                   Text('Dog'), // pet type
@@ -87,6 +90,7 @@ class MyPetApp extends StatelessWidget {
               ),
             ),
             Card(
+              color: Colors.lightBlueAccent,
               child: Column(
                 children: [
                   Text('Vet Contact'), // vet contact
@@ -96,6 +100,7 @@ class MyPetApp extends StatelessWidget {
               ),
             ),
             Card(
+              color: Colors.lightGreen,
               child: Column(
                 children: [
                   Text('Pet Description'), // vet contact
