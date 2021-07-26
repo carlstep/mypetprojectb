@@ -8,57 +8,56 @@ class MyPetApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Widget petCardSection = Container(
-      color: Colors.grey,
+      //color: Colors.grey,
       margin: EdgeInsets.all(20),
       child: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Container(
-              margin: EdgeInsets.only(left: 30),
-              child: CircleAvatar(
-                backgroundColor: Colors.amber,
-                radius: 135,
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('images/dog-img.jpg'),
-                  radius: 130,
+        child: Center(
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              Container(
+                height: 250,
+                width: 280,
+                //margin: EdgeInsets.only(left: 30),
+                child: Card(
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  child: Image.asset(
+                    'images/dog-img.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    side: BorderSide(color: Colors.red, width: 5.0),
+                  ),
                 ),
               ),
-            ),
-            Positioned(
-              top: -20,
-              right: 20,
-              child: Card(
-                color: Colors.yellow[500],
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'Pet Name',
-                    style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+              Positioned(
+                width: 280,
+                bottom: 0,
+                left: 0,
+                child: Card(
+                  color: Colors.yellow[500],
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Center(
+                      child: Text(
+                        'Pet Name Goes Here',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-            ),
-            Positioned(
-              bottom: -15,
-              right: 20,
-              child: Card(
-                color: Colors.blueGrey,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(
-                    FontAwesomeIcons.dog,
-                    size: 50,
-                    color: Colors.yellow,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                    side: BorderSide(color: Colors.red, width: 2.0),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -68,14 +67,20 @@ class MyPetApp extends StatelessWidget {
       height: 350,
       width: 300,
       child: Swiper(
+        autoplay: false,
+        pagination: SwiperPagination(),
         itemBuilder: (BuildContext context, int index) {
           return Card(
             color: Colors.red,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
-              child: Image.network(
-                "https://via.placeholder.com/350x150",
-                fit: BoxFit.fill,
+              child: Column(
+                children: [
+                  Text('Dog'), // pet type
+                  Text('Labrador Retriever'), // breed of pet
+                  Text('January 10, 2017'), // date of birth
+                  Text('Male'), // sex
+                ],
               ),
             ),
           );
@@ -94,11 +99,20 @@ class MyPetApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('My Pet Project'),
         ),
-        body: ListView(
-          children: [
-            petCardSection,
-            petCardInfoSwipeSection,
-          ],
+        body: Swiper(
+          itemBuilder: (BuildContext context, int index) {
+            child:
+            return ListView(
+              children: [
+                petCardSection,
+                petCardInfoSwipeSection,
+              ],
+            );
+          },
+          itemCount: 3,
+          scrollDirection: Axis.horizontal,
+          viewportFraction: 0.9,
+          scale: 0.9,
         ),
       ),
     );
