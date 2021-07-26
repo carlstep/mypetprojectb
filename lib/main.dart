@@ -63,17 +63,20 @@ class MyPetApp extends StatelessWidget {
     );
 
     Widget petCardInfoSwipeSection = Container(
-      margin: EdgeInsets.only(top: 30, bottom: 30),
-      height: 350,
-      width: 300,
-      child: Swiper(
-        autoplay: false,
-        pagination: SwiperPagination(),
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            color: Colors.red,
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
+        margin: EdgeInsets.only(top: 30, bottom: 30),
+        height: 350,
+        width: 300,
+        child: Swiper.children(
+          autoplay: false,
+          pagination: SwiperPagination(
+              margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 30.0),
+              builder: DotSwiperPaginationBuilder(
+                  color: Colors.white30,
+                  activeColor: Colors.white,
+                  size: 20.0,
+                  activeSize: 20.0)),
+          children: <Widget>[
+            Card(
               child: Column(
                 children: [
                   Text('Dog'), // pet type
@@ -83,14 +86,24 @@ class MyPetApp extends StatelessWidget {
                 ],
               ),
             ),
-          );
-        },
-        itemCount: 3,
-        scrollDirection: Axis.horizontal,
-        viewportFraction: 0.8,
-        scale: 0.9,
-      ),
-    );
+            Card(
+              child: Column(
+                children: [
+                  Text('Vet Contact'), // vet contact
+                  Text('Groomer Contact'), // grooming contact
+                  Text('Pet Supplies Store'), // pet supplies store
+                ],
+              ),
+            ),
+            Card(
+              child: Column(
+                children: [
+                  Text('Pet Description'), // vet contact
+                ],
+              ),
+            ),
+          ],
+        ));
 
     return MaterialApp(
       title: 'My Pet Project',
