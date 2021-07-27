@@ -63,12 +63,15 @@ class MyPetApp extends StatelessWidget {
     );
 
     Widget petCardInfoSwipeSection = Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(20),),
+      ),
         margin: EdgeInsets.only(top: 30, bottom: 30),
         height: 350,
         width: 300,
         child: Swiper.children(
-          viewportFraction: 0.8,
-          scale: 0.9,
+          viewportFraction: 0.7,
+          scale: .8,
           autoplay: false,
           pagination: SwiperPagination(
               margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 20.0),
@@ -79,6 +82,9 @@ class MyPetApp extends StatelessWidget {
                   activeSize: 20.0)),
           children: <Widget>[
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
               color: Colors.yellow,
               child: Column(
                 children: [
@@ -90,6 +96,9 @@ class MyPetApp extends StatelessWidget {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
               color: Colors.lightBlueAccent,
               child: Column(
                 children: [
@@ -100,6 +109,9 @@ class MyPetApp extends StatelessWidget {
               ),
             ),
             Card(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(30),
+              ),
               color: Colors.lightGreen,
               child: Column(
                 children: [
@@ -120,7 +132,7 @@ class MyPetApp extends StatelessWidget {
         body: Swiper(
           itemBuilder: (BuildContext context, int index) {
             child:
-            return ListView(
+            return ListView( // TODO - is this the best widget to use?
               children: [
                 petCardSection,
                 petCardInfoSwipeSection,
@@ -129,8 +141,8 @@ class MyPetApp extends StatelessWidget {
           },
           itemCount: 3,
           scrollDirection: Axis.horizontal,
-          viewportFraction: 0.9,
-          scale: 0.9,
+          viewportFraction: 1,
+          scale: .8,
         ),
       ),
     );
