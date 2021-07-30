@@ -43,10 +43,7 @@ class MyPetApp extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'Pet Name Goes Here',
-                        style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: Theme.of(context).textTheme.headline4,
                       ),
                     ),
                   ),
@@ -88,8 +85,8 @@ class MyPetApp extends StatelessWidget {
               color: Colors.yellow,
               child: Column(
                 children: [
-                  Text('Dog'), // pet type
-                  Text('Labrador Retriever'), // breed of pet
+                  Text('Dog', style: Theme.of(context).textTheme.bodyText1), // pet type
+                  Text('Labrador Retriever', style: Theme.of(context).textTheme.bodyText1), // breed of pet
                   Text('January 10, 2017'), // date of birth
                   Text('Male'), // sex
                 ],
@@ -115,7 +112,7 @@ class MyPetApp extends StatelessWidget {
               color: Colors.lightGreen,
               child: Column(
                 children: [
-                  Text('Pet Description'), // vet contact
+                  Text('Pet Description'),
                 ],
               ),
             ),
@@ -124,14 +121,23 @@ class MyPetApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'My Pet Project',
+      theme: ThemeData(
+        primaryColor: Colors.green,
+        fontFamily: 'Montserrat',
+        textTheme: const TextTheme(
+          headline1: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+          headline2: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+          headline4: TextStyle(fontSize: 8, fontWeight: FontWeight.bold),
+          bodyText1: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+        ),
+      ),
       home: Scaffold(
-        backgroundColor: Colors.grey[800],
+        backgroundColor: Colors.grey[100],
         appBar: AppBar(
           title: Text('My Pet Project'),
         ),
         body: Swiper(
           itemBuilder: (BuildContext context, int index) {
-            child:
             return ListView( // TODO - is this the best widget to use?
               children: [
                 petCardSection,
