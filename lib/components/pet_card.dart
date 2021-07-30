@@ -12,7 +12,7 @@ class PetCard extends StatelessWidget {
       //color: Colors.grey,
       margin: EdgeInsets.all(20),
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(4.0),
         child: Center(
           child: Stack(
             clipBehavior: Clip.none,
