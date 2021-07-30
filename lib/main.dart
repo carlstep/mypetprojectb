@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:card_swiper/card_swiper.dart';
+import 'package:mypetprojectb/utils/constants.dart';
 
 void main() => runApp(MyPetApp());
 
@@ -43,7 +44,7 @@ class MyPetApp extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'Pet Name Goes Here',
-                        style: Theme.of(context).textTheme.headline4,
+                        style: kPetNameTextStyle,
                       ),
                     ),
                   ),
@@ -85,10 +86,10 @@ class MyPetApp extends StatelessWidget {
               color: Colors.yellow,
               child: Column(
                 children: [
-                  Text('Dog', style: Theme.of(context).textTheme.bodyText1), // pet type
-                  Text('Labrador Retriever', style: Theme.of(context).textTheme.bodyText1), // breed of pet
-                  Text('January 10, 2017'), // date of birth
-                  Text('Male'), // sex
+                  Text('Dog', style: kPetCardInfoTextStyle,), // pet type
+                  Text('Labrador Retriever', style: kPetCardInfoTextStyle,), // breed of pet
+                  Text('January 10, 2017', style: kPetCardInfoTextStyle,), // date of birth
+                  Text('Male', style: kPetCardInfoTextStyle,), // sex
                 ],
               ),
             ),
@@ -99,9 +100,9 @@ class MyPetApp extends StatelessWidget {
               color: Colors.lightBlueAccent,
               child: Column(
                 children: [
-                  Text('Vet Contact'), // vet contact
-                  Text('Groomer Contact'), // grooming contact
-                  Text('Pet Supplies Store'), // pet supplies store
+                  Text('Vet Contact', style: kPetCardInfoTextStyle,), // vet contact
+                  Text('Groomer Contact', style: kPetCardInfoTextStyle,), // grooming contact
+                  Text('Pet Supplies Store', style: kPetCardInfoTextStyle,), // pet supplies store
                 ],
               ),
             ),
@@ -112,7 +113,7 @@ class MyPetApp extends StatelessWidget {
               color: Colors.lightGreen,
               child: Column(
                 children: [
-                  Text('Pet Description'),
+                  Text('Pet Description', style: kPetCardInfoTextStyle,),
                 ],
               ),
             ),
