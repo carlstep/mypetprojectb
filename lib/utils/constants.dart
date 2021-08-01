@@ -6,8 +6,15 @@ const kPetNameTextStyle = TextStyle(
   fontWeight: FontWeight.bold,
 );
 
+const kPetCardInfoTextStyleHeader = TextStyle(
+    fontSize: 24,
+    color: Colors.black,
+    fontWeight: FontWeight.bold
+);
+
 const kPetCardInfoTextStyle = TextStyle(
   fontSize: 18,
   color: Colors.black,
   fontWeight: FontWeight.normal
 );
+

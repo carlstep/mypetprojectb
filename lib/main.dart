@@ -17,7 +17,7 @@ class MyPetApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Pet Project',
       home: Scaffold(
-        backgroundColor: Colors.grey[100],
+        backgroundColor: Colors.green[100],
         appBar: AppBar(
           title: Text('My Pet Project'),
         ),

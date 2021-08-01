@@ -29,7 +29,7 @@ class PetCard extends StatelessWidget {
                   ),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
-                    side: BorderSide(color: Colors.red, width: 5.0),
+                    side: BorderSide(color: Colors.yellow, width: 5.0),
                   ),
                 ),
               ),
@@ -49,8 +49,8 @@ class PetCard extends StatelessWidget {
                     ),
                   ),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    side: BorderSide(color: Colors.red, width: 2.0),
+                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
+                    //side: BorderSide(color: Colors.grey, width: 5.0),
                   ),
                 ),
               ),
