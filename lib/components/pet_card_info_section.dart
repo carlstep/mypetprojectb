@@ -26,8 +26,8 @@ class PetCardInfoSection extends StatelessWidget {
             //alignment: Alignment.bottomCenter,
             //margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 10.0),
             builder: DotSwiperPaginationBuilder(
-                color: Colors.grey[500],
-                activeColor: Colors.grey[800],
+                color: Color(0xFF6d8a96),
+                activeColor: Color(0xFF66cc80),
                 size: 15.0,
                 activeSize: 20.0),
           ),

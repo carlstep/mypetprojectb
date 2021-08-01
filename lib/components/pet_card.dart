@@ -28,8 +28,8 @@ class PetCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                    side: BorderSide(color: Colors.yellow, width: 5.0),
+                    borderRadius: BorderRadius.circular(20),
+                    side: BorderSide(color: Color(0xFF6d8a96), width: 5.0),
                   ),
                 ),
               ),
@@ -38,7 +38,7 @@ class PetCard extends StatelessWidget {
                 bottom: 0,
                 left: 0,
                 child: Card(
-                  color: Colors.yellow[500],
+                  color: Color(0xFF6d8a96),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Center(
@@ -49,7 +49,7 @@ class PetCard extends StatelessWidget {
                     ),
                   ),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30)),
+                    borderRadius: BorderRadius.only(bottomLeft: Radius.circular(20), bottomRight: Radius.circular(20),),
                     //side: BorderSide(color: Colors.grey, width: 5.0),
                   ),
                 ),
